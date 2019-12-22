@@ -1,6 +1,4 @@
-position: 1
-username: env(username)
-token: env(token)
+login: env(anitracker)
 anidata: env(anidata)
 
 help: |

@@ -2,7 +2,7 @@ package com.senderman.anitrackerbot
 
 import com.annimon.tgbotsmodule.BotHandler
 import com.annimon.tgbotsmodule.api.methods.Methods
-import com.senderman.TgUser
+import com.senderman.neblib.TgUser
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod
 import org.telegram.telegrambots.meta.api.methods.ParseMode
 import org.telegram.telegrambots.meta.api.objects.Update
@@ -208,10 +208,10 @@ class AnitrackerBotHandler internal constructor(private val config: BotConfig) :
     }
 
     override fun getBotUsername(): String {
-        return config.username.split(" ")[config.position]
+        return config.login.split(" ".toRegex(), 2)[0]
     }
 
     override fun getBotToken(): String {
-        return config.token.split(" ")[config.position]
+        return config.login.split(" ".toRegex(), 2)[1]
     }
 }

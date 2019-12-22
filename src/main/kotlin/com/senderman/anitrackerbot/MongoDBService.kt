@@ -2,7 +2,7 @@ package com.senderman.anitrackerbot
 
 import com.mongodb.client.MongoCollection
 import com.mongodb.client.model.Filters.eq
-import com.senderman.MongoClientKeeper
+import com.senderman.neblib.MongoClientKeeper
 import org.bson.Document
 import java.util.*
 import kotlin.collections.ArrayList
@@ -56,6 +56,6 @@ internal class MongoDBService : DBService {
         for (userId in database.listCollectionNames()) {
             result.add(userId.toInt())
         }
-        return result;
+        return result
     }
 }
